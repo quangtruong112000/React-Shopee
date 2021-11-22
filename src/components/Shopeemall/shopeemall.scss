@@ -1,0 +1,227 @@
+@use "../../scss/" as *;
+
+.mall {
+  background: #f5f5f5;
+  @include mobile {
+    padding-top: 10px;
+  }
+
+  &-container {
+    background: #fff;
+  }
+  &-heading {
+    font-size: 17px;
+    color: #d0011b;
+    padding-right: 20px;
+    border-right: 1px solid;
+    margin-right: 20px;
+    font-weight: 400;
+
+    @include mobile {
+      border-right: none;
+    }
+  }
+
+  &-list,
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 25px;
+  }
+
+  &-list {
+    @include mobile {
+      display: none;
+    }
+  }
+  &-head {
+    padding: 0 1.5rem;
+    height: 61px;
+  }
+  &-right a,
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-right {
+    a {
+      gap: 0 10px;
+      span {
+        font-size: 14px;
+        color: #d0011b;
+      }
+
+      svg {
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+        background: #d0011b;
+        border-radius: 50%;
+        padding: 5px;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 6px;
+
+    img {
+      width: 17px;
+      height: 17px;
+    }
+
+    span {
+      font-size: 16px;
+      color: #333333;
+    }
+  }
+
+  &-main {
+    border: 1px solid #eee;
+    display: grid;
+    grid-template-columns: 33% 67%;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &-banner {
+    display: inline-block;
+    padding: 10px 0 0 10px;
+    background-color: #fff;
+    vertical-align: top;
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    &-mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  .slider {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .slick-dots {
+    bottom: 13px;
+
+    li {
+      font-size: 1.3rem;
+      margin: 0;
+
+      button:before {
+        font-size: 10px;
+        color: #fff;
+        opacity: 0.5;
+      }
+
+      &.slick-active button:before {
+        color: $primary-color;
+        opacity: 1;
+      }
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 35px;
+  }
+
+  .slick-next {
+    right: 14px;
+    top: 48%;
+  }
+  .slick-prev {
+    z-index: 1;
+    left: 0px;
+    top: 48%;
+  }
+
+  .slick-arrow {
+    display: none !important;
+    transition: all 0.3s linear !important;
+  }
+
+  .slick-slider:hover .slick-arrow {
+    display: block !important;
+  }
+
+  &-listp {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &-product {
+    width: 100%;
+    height: 216px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    cursor: pointer;
+    background-position: center;
+
+    @include tablet {
+      height: auto;
+    }
+
+    @include mobile {
+      height: 135px;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      bottom: 0px;
+      width: 172px;
+      height: 27px;
+      line-height: 27px;
+      text-align: center;
+      font-size: 19px;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      word-wrap: break-word;
+      overflow: hidden;
+      color: #d0011b;
+      max-width: 90%;
+      margin: 0 auto;
+
+      @include tabletpro {
+        font-size: 15px;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @include tabletpro {
+    .slick-slider div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

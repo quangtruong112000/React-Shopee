@@ -1,0 +1,127 @@
+@use "../../scss/" as *;
+
+.top {
+  background: #f5f5f5;
+  padding-top: 20px;
+
+  &-container {
+    background-color: #fff;
+  }
+  &-head {
+    @include flex(center, space-between);
+    padding: 0 1.5rem;
+    border-bottom: 1px solid #eee;
+    height: 61px;
+  }
+
+  &-list:hover .slick-prev:before,
+  &-list:hover .slick-next:before {
+    transition: all 0.2s linear;
+    color: rgb(182, 182, 182);
+    font-size: 45px;
+  }
+
+  &-heading {
+    font-size: 1.7rem;
+    color: $primary-color;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    padding: 23px 10px 20px;
+
+    &-img {
+      position: relative;
+
+      &-main {
+        position: relative;
+        padding: 20px 10px;
+      }
+    }
+
+    &-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    &-cout {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 1.4rem;
+      color: #fff;
+      text-align: center;
+      background: rgba(175, 175, 175, 0.7);
+      z-index: 1;
+      font-weight: 400;
+      padding: 5px;
+      width: auto;
+      height: 17px;
+    }
+
+    &-name {
+      font-size: 1.8rem;
+      color: rgb(88, 88, 88);
+      line-height: 2.5rem;
+      padding-top: 17px;
+
+      @include tablet {
+        font-size: 1.5rem;
+        padding-top: 10px;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  &-load {
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+    align-items: center;
+    color: $primary-color;
+    font-size: 1.5rem;
+    span {
+      white-space: nowrap;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+      fill: $primary-color;
+    }
+  }
+
+  .slick-prev {
+    left: -18px;
+  }
+  .slick-next {
+    right: 0;
+  }
+  .slick-prev,
+  .slick-next {
+    top: 45%;
+    z-index: 4;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: rgb(240, 240, 240);
+    border-radius: 50%;
+    font-size: 35px;
+  }
+
+  .slick-slider .slick-track,
+  .slick-slider .slick-list {
+    margin-top: -10px;
+  }
+}

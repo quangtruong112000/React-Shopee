@@ -1,0 +1,10 @@
+@use "./scss/" as *;
+
+html {
+  @include tablet {
+    font-size: 70%;
+  }
+  @include mobile {
+    font-size: 60%;
+  }
+}
